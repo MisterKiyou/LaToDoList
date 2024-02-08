@@ -3,22 +3,25 @@ import configparser
 import logging
 
 class Database:
-    def __init__(self):
+    def __init__(self, db_path=None):
         """
         Initialize the Database class.
 
-        Reads the 'db_path' from the configuration file or uses the default value 'todo.db'.
+        Reads the 'db_path' from the configuration file or uses the provided value or the default value 'todo.db'.
         Establishes a connection to the SQLite database.
 
+        :param db_path: The path to the SQLite database file.
+        :type db_path: str or None
         :raises sqlite3.Error: If there is an error in establishing the database connection.
         """
         config = configparser.ConfigParser()
         config.read('config.ini')
 
-        # Use 'db_path' from the configuration file if provided, else use the default value
-        self.db_path = config.get('Database', 'db_path', fallback='todo.db')
+        # Use 'db_path' from the configuration file if provided, else use the provided value or the default value
+        self.db_path = db_path or config.get('Database', 'db_path', fallback='todo.db')
         self.conn = sqlite3.connect(self.db_path)
         self.cursor = self.conn.cursor()
+
 
     def initialize_database(self):
         """
