@@ -1,6 +1,12 @@
 from app.database import Database
 from app.task import Task
 from app.ui import UI
+import logging
+
+# Set up basic logging configuration
+# - Log messages with severity ERROR and above (higher severity levels: CRITICAL > ERROR > WARNING > INFO > DEBUG)
+# - Write log messages to the 'app.log' file
+logging.basicConfig(filename='app.log', level=logging.ERROR)
 
 # Create Database instance
 db = Database('todo.db')  # Use your actual database file path
