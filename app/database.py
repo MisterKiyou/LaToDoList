@@ -2,9 +2,16 @@ import sqlite3
 import configparser
 import logging
 
-
 class Database:
     def __init__(self):
+        """
+        Initialize the Database class.
+
+        Reads the 'db_path' from the configuration file or uses the default value 'todo.db'.
+        Establishes a connection to the SQLite database.
+
+        :raises sqlite3.Error: If there is an error in establishing the database connection.
+        """
         config = configparser.ConfigParser()
         config.read('config.ini')
 
@@ -14,6 +21,11 @@ class Database:
         self.cursor = self.conn.cursor()
 
     def initialize_database(self):
+        """
+        Initialize the tasks table in the database if it does not exist.
+
+        :raises sqlite3.Error: If there is an error in executing the SQL command.
+        """
         try:
             self.cursor.execute('''
                 CREATE TABLE IF NOT EXISTS tasks (
@@ -28,6 +40,13 @@ class Database:
             logging.error(f"Error initializing database: {e}")
 
     def add_task(self, task_name, due_date=None):
+        """
+        Add a task to the tasks table in the database.
+
+        :param task_name: The name of the task.
+        :param due_date: The due date of the task (default is None).
+        :raises sqlite3.Error: If there is an error in executing the SQL command.
+        """
         try:
             self.cursor.execute('INSERT INTO tasks (task_name, due_date, completed) VALUES (?, ?, ?)',
                                 (task_name, due_date, False))
@@ -36,6 +55,13 @@ class Database:
             logging.error(f"Error adding task to database: {e}")
 
     def get_all_tasks(self):
+        """
+        Retrieve all tasks from the tasks table in the database.
+
+        :return: A list of tasks as tuples.
+        :rtype: list
+        :raises sqlite3.Error: If there is an error in executing the SQL command.
+        """
         try:
             self.cursor.execute('SELECT * FROM tasks')
             return self.cursor.fetchall()

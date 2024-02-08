@@ -13,6 +13,14 @@ class UI:
 
     @staticmethod
     def get_user_input(prompt, valid_choices, validate_date=False):
+        """
+        Get user input and perform validation.
+
+        :param prompt: The prompt to display to the user.
+        :param valid_choices: List of valid choices.
+        :param validate_date: Flag to indicate whether to validate date input.
+        :return: User input if valid.
+        """
         while True:
             try:
                 user_input = input(prompt).strip().lower()
@@ -28,6 +36,12 @@ class UI:
 
     @staticmethod
     def validate_date_format(date_string):
+        """
+        Validate the format and due date of a date string.
+
+        :param date_string: The input date string.
+        :return: True if the date format and due date are valid, False otherwise.
+        """
         try:
             # Parse the input date string
             due_date = datetime.strptime(date_string, '%Y-%m-%d')
