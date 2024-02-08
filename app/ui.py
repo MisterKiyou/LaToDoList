@@ -2,7 +2,7 @@ class UI:
     @staticmethod
     def display_tasks(tasks):
         for task in tasks:
-            print(f"Task ID: {task['id']}, Task Name: {task['task_name']}, Due Date: {task['due_date']}, Completed: {task['completed']}")
+            print(f"Task ID: {task[0]}, Task Name: {task[1]}, Due Date: {task[2]}, Completed: {task[3]}")
     @staticmethod
     def get_user_input(prompt, valid_choices):
         while True:

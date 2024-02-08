@@ -1,13 +1,10 @@
 import sqlite3
 
-
 class Database:
-
     def __init__(self, db_path):
         self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
-
-    def create_tasks_table(self):
+    def initialize_database(self):
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS tasks (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,

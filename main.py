@@ -1,16 +1,17 @@
-# This is a sample Python script.
+from app.database import Database
+from app.task import Task
+from app.ui import UI
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Create Database instance
+db = Database('todo.db')  # Use your actual database file path
 
+# Initialize the database (create tasks table)
+db.initialize_database()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# I added a sample task as an exemple
+sample_task = Task('Sample Task', '2024-02-15')
+db.add_task(sample_task.task_name, sample_task.due_date)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Lets look at our tasks
+tasks = db.get_all_tasks()
+UI.display_tasks(tasks)
