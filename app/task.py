@@ -11,3 +11,16 @@ class Task:
         self.task_name = task_name
         self.due_date = due_date
         self.completed = False
+
+    def mark_as_completed(self):
+        """
+        Mark the task as completed.
+        """
+        self.completed = True
+
+    def delete_task(self):
+        """
+        Delete the task.
+        """
+        # Optionally perform any cleanup or logging before deleting
+        del self
