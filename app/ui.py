@@ -27,7 +27,7 @@ class UI:
                 # Due date verification
                 if UI.validate_date_format(due_date):
                     logging.info(f"Input returned")
-                    return name, referent, due_date, comment
+                    return name, referent, due_date, comment  # This tuple needs to be unpacked with * when used
                 else:
                     print("Invalid due date. Please ensure the date is after the current date.")
             except Exception as e:

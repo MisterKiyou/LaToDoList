@@ -19,8 +19,7 @@ db = Database()
 db.initialize_database()
 
 # Add a sample task as an example
-# Task( name, referent, due_date, comment)
-sample_task = Task(*ui.get_user_input_for_task()) # * can unpact tuples
+sample_task = Task(*ui.get_user_input_for_task())  # * can unpact tuples
 db.add_task(sample_task)
 
 # Delete tasks
