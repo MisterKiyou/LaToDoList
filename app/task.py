@@ -17,3 +17,7 @@ class Task:
         self.due_date = due_date
         self.comment = comment
         self.state = False
+
+    def __repr__(self):
+        return f"Task Name: {self.name}, Referent: {self.referent}, Due Date: {self.due_date}, Comment: {self.comment}, Completed: {self.state}"
+

@@ -8,6 +8,10 @@ import logging
 # - Write log messages to the 'app.log' file
 logging.basicConfig(filename='app.log', level=logging.DEBUG)
 
+# Create UI
+
+ui = UI()
+
 # Create Database instance
 db = Database()
 
@@ -16,14 +20,12 @@ db.initialize_database()
 
 # Add a sample task as an example
 # Task( name, referent, due_date, comment)
-sample_task = Task('Build an app', "Me", '2024-02-15', "Do it right")
+sample_task = Task(*ui.get_user_input_for_task()) # * can unpact tuples
 db.add_task(sample_task)
 
-#Delete tasks
+# Delete tasks
 # for i in range(1,11):
 #    db.del_task(i)
-
-
 
 # Retrieve all tasks from the database
 tasks = db.get_all_tasks()

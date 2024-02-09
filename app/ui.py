@@ -12,26 +12,26 @@ class UI:
             logging.error(f"Error displaying tasks: {e}")
 
     @staticmethod
-    def get_user_input(prompt, valid_choices, validate_date=False):
+    def get_user_input_for_task():
         """
-        Get user input and perform validation.
+        Get user input for creating a task.
 
-        :param prompt: The prompt to display to the user.
-        :param valid_choices: List of valid choices.
-        :param validate_date: Flag to indicate whether to validate date input.
-        :return: User input if valid.
+        :return: A tuple containing task information (name, referent, due_date, comment).
         """
         while True:
             try:
-                user_input = input(prompt).strip().lower()
-                if user_input in valid_choices:
-                    return user_input
-                elif validate_date and not UI.validate_date_format(user_input):
-                    print("Invalid due date. Please ensure the date is after the current date.")
+                name = input("Enter Task Name: ").strip()
+                referent = input("Enter Referent: ").strip()
+                due_date = input("Enter Due Date (YYYY-MM-DD): ").strip()
+                comment = input("Enter Comment: ").strip()
+                # Due date verification
+                if UI.validate_date_format(due_date):
+                    logging.info(f"Input returned")
+                    return name, referent, due_date, comment
                 else:
-                    print("Invalid choice. Please try again.")
+                    print("Invalid due date. Please ensure the date is after the current date.")
             except Exception as e:
-                logging.error(f"Error in get_user_input: {e}")
+                logging.error(f"Error in get_user_input_for_task: {e}")
                 print("An error occurred. Please try again or contact support.")
 
     @staticmethod
