@@ -6,7 +6,7 @@ import logging
 # Set up basic logging configuration
 # - Log messages with severity ERROR and above (higher severity levels: CRITICAL > ERROR > WARNING > INFO > DEBUG)
 # - Write log messages to the 'app.log' file
-logging.basicConfig(filename='app.log', level=logging.ERROR)
+logging.basicConfig(filename='app.log', level=logging.DEBUG)
 
 # Create Database instance
 db = Database()
@@ -15,10 +15,12 @@ db = Database()
 db.initialize_database()
 
 # Add a sample task as an example
-sample_task = Task('Sample Task', '2024-02-15')
-db.add_task(sample_task.task_name, sample_task.due_date)
+#sample_task = Task('Sample Task', '2024-02-15')
+#db.add_task(sample_task.task_name, sample_task.due_date)
 
 # Retrieve all tasks from the database
+#for i in range(1,11):
+#    db.del_task(i)
 tasks = db.get_all_tasks()
 
 # Display tasks using the UI module

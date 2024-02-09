@@ -2,6 +2,7 @@ import sqlite3
 import configparser
 import logging
 
+
 class Database:
     def __init__(self, db_path=None):
         """
@@ -21,7 +22,7 @@ class Database:
         self.db_path = db_path or config.get('Database', 'db_path', fallback='todo.db')
         self.conn = sqlite3.connect(self.db_path)
         self.cursor = self.conn.cursor()
-
+        logging.info(f"Info a Database as been created")
 
     def initialize_database(self):
         """
@@ -39,6 +40,7 @@ class Database:
                 )
             ''')
             self.conn.commit()
+            logging.info(f"Info a Database as been initialized")
         except sqlite3.Error as e:
             logging.error(f"Error initializing database: {e}")
 
@@ -54,6 +56,7 @@ class Database:
             self.cursor.execute('INSERT INTO tasks (task_name, due_date, completed) VALUES (?, ?, ?)',
                                 (task_name, due_date, False))
             self.conn.commit()
+            logging.info(f"Info a task as been added to a Database")
         except sqlite3.Error as e:
             logging.error(f"Error adding task to database: {e}")
 
@@ -71,3 +74,18 @@ class Database:
         except sqlite3.Error as e:
             logging.error(f"Error retrieving tasks from database: {e}")
             return []
+
+    def del_task(self, id_to_del)-> None:
+        """
+        Delete task with the given id from the tasks table in the database.
+
+        :param id_to_del: The name of the task we want to delete.
+        :return: None.
+        :raises sqlite3.Error: If there is an error in executing the SQL command.
+        """
+        try:
+            self.cursor.execute('DELETE FROM tasks WHERE id = ?;', (id_to_del,))
+            self.conn.commit()
+            logging.info(f"Info a task  as been deleted")
+        except sqlite3.Error as e:
+            logging.error(f"Error deleting tasks from database: {e}")

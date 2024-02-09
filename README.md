@@ -1,25 +1,25 @@
-# LaToDoList
+þÿ #aLoToDiLts
 
-LaToDoList is a simple to-do list application built in Python. It allows users to manage their tasks, mark them as completed, and organize their daily activities.
+aLoToDiLtsi  s aispmelt -oodl si tpalpcitaoi nubli tniP tyoh.nI  tlaolswu essrt  oamanegt ehrit sask ,amkrt eh msac molptede ,na droaginezt ehrid iayla tcvitiei.s
 
-## Features
+##F aeuters
+-
+* T*sa kaManegemtn*: *dA,dd lete,ea dnu dpta eatks siwhtd eud tase.-
+* T*sa koCpmelitno*: *aMkrt saska  socpmelet dott arkcy uo rrpgoerss.-
+* S*LQti eaDatabes*: *tUlizisea  nQSiLetd tabasa eots otert sa kniofmrtaoi.n
+ -**oCfngirutaoi niFel*: *lAolswc suotimazitnot rhuohga c noifugaritnof li e`(ocfngii.in)`.-
+* C*moamdnL-ni enIetfrca:e**P orived s atsargithofwrra docmmna-dileni tnreafecf roe sa ynietartcoi.n
 
-- **Task Management:** Add, delete, and update tasks with due dates.
-- **Task Completion:** Mark tasks as completed to track your progress.
-- **SQLite Database:** Utilizes an SQLite database to store task information.
-- **Configuration File:** Allows customization through a configuration file (`config.ini`).
-- **Command-Line Interface:** Provides a straightforward command-line interface for easy interaction.
+##G teitgnS attrde
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.x
-- SQLite
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/LaToDoList.git
+## #rPreqeiuisets
+-
+P tyoh n.3x-
+S LQtie
+#
+##I snatlltaoin
+1
+ .lCno eht eeropisotyr:
+ 
+  ``b`sah 
+  ig tlcno ethpt:s//ightbuc.moy/uo-rsureanemL/TaDoLosi.tigtÿý
