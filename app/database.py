@@ -35,8 +35,10 @@ class Database:
                 CREATE TABLE IF NOT EXISTS tasks (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     task_name TEXT NOT NULL,
+                    referent TEXT,
                     due_date DATE,
-                    completed BOOLEAN
+                    comment TEXT,
+                    state BOOLEAN
                 )
             ''')
             self.conn.commit()
@@ -44,17 +46,16 @@ class Database:
         except sqlite3.Error as e:
             logging.error(f"Error initializing database: {e}")
 
-    def add_task(self, task_name, due_date=None):
+    def add_task(self, task):
         """
         Add a task to the tasks table in the database.
 
-        :param task_name: The name of the task.
-        :param due_date: The due date of the task (default is None).
+        :param task: Task to add.
         :raises sqlite3.Error: If there is an error in executing the SQL command.
         """
         try:
-            self.cursor.execute('INSERT INTO tasks (task_name, due_date, completed) VALUES (?, ?, ?)',
-                                (task_name, due_date, False))
+            self.cursor.execute('INSERT INTO tasks (task_name, referent, due_date, comment, state) VALUES (?, ?, ?, ?, ?)',
+                                (task.name, task.referent, task.due_date, task.comment, task.state))
             self.conn.commit()
             logging.info(f"Info a task as been added to a Database")
         except sqlite3.Error as e:
@@ -75,7 +76,7 @@ class Database:
             logging.error(f"Error retrieving tasks from database: {e}")
             return []
 
-    def del_task(self, id_to_del)-> None:
+    def del_task(self, id_to_del) -> None:
         """
         Delete task with the given id from the tasks table in the database.
 

@@ -15,12 +15,17 @@ db = Database()
 db.initialize_database()
 
 # Add a sample task as an example
-#sample_task = Task('Sample Task', '2024-02-15')
-#db.add_task(sample_task.task_name, sample_task.due_date)
+# Task( name, referent, due_date, comment)
+sample_task = Task('Build an app', "Me", '2024-02-15', "Do it right")
+db.add_task(sample_task)
+
+#Delete tasks
+# for i in range(1,11):
+#    db.del_task(i)
+
+
 
 # Retrieve all tasks from the database
-#for i in range(1,11):
-#    db.del_task(i)
 tasks = db.get_all_tasks()
 
 # Display tasks using the UI module

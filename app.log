@@ -1,0 +1,73 @@
+ERROR:root:Error deleting tasks from database: near "id": syntax error
+ERROR:root:Error deleting tasks from database: near "id": syntax error
+ERROR:root:Error deleting tasks from database: near "id": syntax error
+ERROR:root:Error retrieving tasks from database: Cannot operate on a closed database.
+ERROR:root:Error retrieving tasks from database: Cannot operate on a closed database.
+ERROR:root:Error retrieving tasks from database: Cannot operate on a closed database.
+INFO:root:Info a task  as been deleted
+ERROR:root:Error retrieving tasks from database: Cannot operate on a closed database.
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a task  as been deleted
+ERROR:root:Error retrieving tasks from database: Cannot operate on a closed database.
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a task  as been deleted
+ERROR:root:Error retrieving tasks from database: Cannot operate on a closed database.
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a task  as been deleted
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a task  as been deleted
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a task as been added to a Database
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a task as been added to a Database
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+ERROR:root:Error adding task to database: table tasks has no column named referent
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+ERROR:root:Error adding task to database: table tasks has no column named referent
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+ERROR:root:Error adding task to database: table tasks has no column named referent
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+ERROR:root:Error adding task to database: table tasks has no column named referent
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+ERROR:root:Error adding task to database: table tasks has no column named referent
+INFO:root:Info a Database as been created
+INFO:root:Info a Database as been initialized
+INFO:root:Info a task as been added to a Database
