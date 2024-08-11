@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <h2>To-Do List</h2>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {{ task[1] }}
+            <form action="/delete_task/{{ task[0] }}" method="POST" style="display:inline;">
+                <button type="submit">Supprimer</button>
+            </form>
+            <form action="/edit_task/{{ task[0] }}" method="POST" style="display:inline;">
+                <input type="text" name="task_name" placeholder="Modifier la tâche">
+                <button type="submit">Modifier</button>
+            </form>
+            <a href="/subtasks/{{ task[0] }}">Voir les sous-tâches</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <form action="/add_task" method="POST">
+        <label for="task">Nouvelle tâche:</label>
+        <input type="text" id="task" name="task">
+        <button type="submit">Ajouter</button>
+    </form>
+</body>
+</html>
+

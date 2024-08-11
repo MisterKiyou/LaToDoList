@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sous-tâches</title>
+</head>
+<body>
+    <h2>Sous-tâches</h2>
+    <ul>
+        {% for subtask in subtasks %}
+        <li>
+            {{ subtask[1] }}
+            <form action="/delete_subtask/{{ subtask[0] }}/{{ task_id }}" method="POST" style="display:inline;">
+                <button type="submit">Supprimer</button>
+            </form>
+            <form action="/edit_subtask/{{ subtask[0] }}/{{ task_id }}" method="POST" style="display:inline;">
+                <input type="text" name="subtask_name" placeholder="Modifier la sous-tâche">
+                <button type="submit">Modifier</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <form action="/add_subtask/{{ task_id }}" method="POST">
+        <label for="subtask">Nouvelle sous-tâche:</label>
+        <input type="text" id="subtask" name="subtask">
+        <button type="submit">Ajouter</button>
+    </form>
+</body>
+</html>
